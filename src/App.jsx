@@ -4,6 +4,7 @@ import {observer} from 'mobx-react-lite'
 import {BrowserRouter} from 'react-router-dom'
 import AppRouter from './components/AppRouter'
 
+// Project by AceBackwards
 const App = observer(() => {
   return (
     <BrowserRouter>
