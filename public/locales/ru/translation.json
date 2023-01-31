@@ -1,0 +1,19 @@
+{
+    "common": {
+        "mainPage": {
+            "content-card": "Карточки контента",
+            "sort-by": "Сортировать",
+            "sort-by-name": "по названию",
+            "sort-by-views": "по просмотрам",
+            "sort-by-start-date": "по дате начала",
+            "sort-by-end-date": "по дате окончания",
+            "show-amount": "Отображать по",
+            "search": "Поиск...",
+            "product-photo": "Фото",
+            "product-name": "Название",
+            "product-views": "Просмотры",
+            "product-start-date": "Начало ротации",
+            "product-end-date": "Конец ротации"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "common": {
+        "mainPage": {
+            "content-card": "Content cards",
+            "sort-by": "Sort",
+            "sort-by-name": "by name",
+            "sort-by-views": "by views",
+            "sort-by-start-date": "by start date",
+            "sort-by-end-date": "by end date",
+            "show-amount": "Show",
+            "search": "Search...",
+            "product-image": "Image",
+            "product-name": "Name",
+            "product-views": "Views",
+            "product-start-date": "Start date",
+            "product-end-date": "End date"
+        }
+    }
+}

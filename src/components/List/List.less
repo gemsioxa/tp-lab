@@ -1,0 +1,41 @@
+@page-button-color: #4D5969;
+@list-title-bg-color: #EDF2F8;
+
+
+.main-page-list__title {
+    margin-top: 10px;
+    display: flex;
+    color: @page-button-color;
+    font-weight: 600;
+    text-align: center;
+    background: @list-title-bg-color;
+    padding: 5px 0;
+    .main-page-list__title__img {
+        width: 10%;
+    }
+    .main-page-list__title__name {
+        width: 50%;
+        text-align: left;
+        padding-left: 10px;
+    }
+    .main-page-list__title__views {
+        width: 12%;
+    }
+    .main-page-list__title__start {
+        width: 14%;
+    }
+    .main-page-list__title__end {
+        width: 14%;
+    }
+}
+
+// item 
+.main-page-list {
+    padding-bottom: 120px;
+}
+
+@media (max-width: 900px) {
+    .main-page-list__title {
+        display: none;
+    }
+}
