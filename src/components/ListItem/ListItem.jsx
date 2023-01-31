@@ -7,7 +7,7 @@ const ListItem = ({item}) => {
   const navigate = useNavigate()
 
   return (
-    <div className="main-page-list-item" onClick={() => navigate(`/${item.id}`)}>
+    <div className="main-page-list-item" onClick={() => navigate(`tp-lab/${item.id}`)}>
         {/* id использовать удобнее для доступа к ссылкам и красивее */}
           <div className="main-page-list-item__img">
               <img src={item.image_url} alt="#"  />
