@@ -1,1 +1,1 @@
-export const MAINPAGE_ROUTE = '/tp-lab'
+export const MAINPAGE_ROUTE = '/'

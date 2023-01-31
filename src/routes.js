@@ -7,7 +7,7 @@ export const publicRoutes = [
         Component: MainPage
     },
     {
-        path: MAINPAGE_ROUTE + '/:id',
+        path: '/:id',
         Component: ItemPage
     }
 ]
