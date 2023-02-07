@@ -20,7 +20,8 @@ const ListItem = ({item}) => {
           <div className="main-page-list-item__views">{item.views}</div>
           <div className="main-page-list-item__start">{item.start_date.split('/')[1].length == 1 ? '0' + item.start_date.split('/')[1] : item.start_date.split('/')[1]}.
           {item.start_date.split('/')[0].length == 1 ? '0' + item.start_date.split('/')[0] : item.start_date.split('/')[0]}.
-          {item.start_date.split('/')[2]}</div>
+          {item.start_date.split('/')[2]}
+          </div>
           <div className="main-page-list-item__end">{item.end_date.split('/')[1].length == 1 ? '0' + item.end_date.split('/')[1] : item.end_date.split('/')[1]}.
           {item.end_date.split('/')[0].length == 1 ? '0' + item.end_date.split('/')[0] : item.end_date.split('/')[0]}.
           {item.end_date.split('/')[2]}</div>

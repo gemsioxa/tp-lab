@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Context } from '../../index'
 import './ShowAmount.less'
+import { useTranslation } from 'react-i18next'
 
 export default function ShowAmount() {
 
+    const { t } = useTranslation()
     const { mainStore } = useContext(Context)
     const [chooseAmount, setChooseAmount] = useState(0)
 
@@ -19,7 +21,7 @@ export default function ShowAmount() {
     return (
     <div className='main-page-options__amount'>
         <div className='main-page-options__amount-description'>
-                Отображать по: 
+            {t('common.mainPage.show-amount')}
         </div>
         <div className='main-page-options__amount-options'>
             

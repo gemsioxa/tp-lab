@@ -2,18 +2,24 @@
     "common": {
         "mainPage": {
             "content-card": "Карточки контента",
-            "sort-by": "Сортировать",
+            "sort-by": "Сортировать:",
             "sort-by-name": "по названию",
             "sort-by-views": "по просмотрам",
             "sort-by-start-date": "по дате начала",
             "sort-by-end-date": "по дате окончания",
             "show-amount": "Отображать по",
             "search": "Поиск...",
-            "product-photo": "Фото",
+            "product-image": "Фото",
             "product-name": "Название",
             "product-views": "Просмотры",
             "product-start-date": "Начало ротации",
-            "product-end-date": "Конец ротации"
+            "product-end-date": "Конец ротации",
+            "product-back": "Назад",
+            "product-free": "Бесплатно",
+            "product-price": "Цена",
+            "product-old-price": "Старая цена",
+            "product-sale-price": "Цена по акции",
+            "product-sale-active": "Акция действует с {{startDate}} по {{endDate}}"
         }
     }
 }

@@ -6,14 +6,23 @@ import ProductsJSON from '../../db/products.json'
 import DiscountIMG from '../../img/ItemPage/Discount.png'
 import StarIMG from '../../img/ItemPage/star.png'
 import FillStarIMG from '../../img/ItemPage/fill-star.png'
-
+import { useTranslation } from 'react-i18next'
 
 const ItemPage = observer(() => {
 
+  const { t } = useTranslation()
   const navigate = useNavigate()
   const [product, setProduct] = useState({})
   const [rating, setRating] = useState([])
   const {id} = useParams()
+
+  const makingDate = (rotationDate) => {
+    if (rotationDate == 'start') {
+      return `${product?.start_date?.split('/')[1].length == 1 ? '0' + product?.start_date?.split('/')[1] : product?.start_date?.split('/')[1]}.${product?.start_date?.split('/')[0].length == 1 ? '0' + product?.start_date?.split('/')[0] : product?.start_date?.split('/')[0]}.${product?.start_date?.split('/')[2]}`
+    } else {
+      return `${product?.end_date?.split('/')[1].length == 1 ? '0' + product?.end_date?.split('/')[1] : product?.end_date?.split('/')[1]}.${product?.end_date?.split('/')[0].length == 1 ? '0' + product?.end_date?.split('/')[0] : product?.end_date?.split('/')[0]}.${product?.end_date?.split('/')[2]}`
+    }
+  }
 
   useEffect( () => {
     (async () => {
@@ -43,7 +52,7 @@ const ItemPage = observer(() => {
       <div className='container'>
         <button className='item-page__back' onClick={() => navigate(`/`)}>
           <i className="fa-solid fa-angle-left" />
-          Назад
+          {t('common.mainPage.product-back')}
         </button>
         <div className='padding-container'>
           <div className={product?.discount == 0 ? 'item-page-header item-page-header__zero' : 'item-page-header'}>
@@ -81,10 +90,10 @@ const ItemPage = observer(() => {
                     <span>{String(product?.old_price)?.split(',' || '.' || '')[1]?.length >= 2 ? String(product?.old_price)?.split(',' || '.' || '')[1]?.slice(0, 2) :
                     String(product?.old_price)?.split(',' || '.' || '')[1]?.length == 1 ? String(product?.old_price)?.split(',' || '.' || '')[1]?.slice(0, 2) + '0'
                      : "00"}</span>
-                    </p> : 'Бесплатно'}
+                    </p> : t('common.mainPage.product-free')}
                   </div>
                   <div className='item-page-main__price__info'>
-                    Цена
+                  {t('common.mainPage.product-price')}
                   </div>
                 </div>
               </div>
@@ -100,7 +109,7 @@ const ItemPage = observer(() => {
                     <div className='item-page-main__price__num__line'/>
                   </div>
                   <div className='item-page-main__price__info'>
-                    Старая цена
+                    {t('common.mainPage.product-old-price')}
                   </div>
                 </div>
                 <div className='item-page-main__price__new'>
@@ -112,7 +121,7 @@ const ItemPage = observer(() => {
                     </p>
                   </div>
                   <div className='item-page-main__price__info'>
-                    Цена по акции
+                  {t('common.mainPage.product-sale-price')}
                   </div>
                 </div>
               </div>}
@@ -121,18 +130,8 @@ const ItemPage = observer(() => {
         </div>
         <div className='item-page-footer'>
           <h3>
-            Акция действует с 
-            {' '}
-            {product?.start_date?.split('/')[0].length == 1 ? '0' + product?.start_date?.split('/')[0] : product?.start_date?.split('/')[0]}.
-            {product?.start_date?.split('/')[1].length == 1 ? '0' + product?.start_date?.split('/')[1] : product?.start_date?.split('/')[1]}.
-            {product?.start_date?.split('/')[2]}
-            {' '}
-            по 
-            {' '}
-            {product?.end_date?.split('/')[0].length == 1 ? '0' + product?.end_date?.split('/')[0] : product?.end_date?.split('/')[0]}.
-            {product?.end_date?.split('/')[1].length == 1 ? '0' + product?.end_date?.split('/')[1] : product?.end_date?.split('/')[1]}.
-            {product?.end_date?.split('/')[2]}
-            {' '}
+            {t('common.mainPage.product-sale-active', {startDate: makingDate('start'), endDate: makingDate('end')})}
+            
           </h3>
           <p>{product?.disclaimer}</p>
         </div>

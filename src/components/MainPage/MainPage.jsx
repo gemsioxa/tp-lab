@@ -5,15 +5,11 @@ import SearchSVG from '../../img/MainPage/Search.png'
 import Pagination from '../Pagination/Pagination'
 import { observer } from 'mobx-react-lite'
 import ShowAmount from '../ShowAmount/ShowAmount'
+import { useTranslation } from 'react-i18next'
+import '../../i18next'
 
-import {useTranslation} from "react-i18next";
 const MainPage = observer(() => {
-    
-    // const { t, i18n } = useTranslation();
 
-    // const changeLanguage = (language) => {
-    //     i18n.changeLanguage(language);
-    // };
 
     const { mainStore } = useContext(Context)
     const [nameSort, setNameSort] = useState(0)
@@ -131,35 +127,45 @@ const MainPage = observer(() => {
     }
 
 
+    const { t, i18n } = useTranslation()
+    const changeLanguage = (lang) => {
+        i18n.changeLanguage(lang)
+    }
+
+
     return (
         <div className='main-page'>
             
             <div className="container">
-                <div className="main-page__list-name">Карточки контента</div>
+                <div className="main-page__list-name">{t('common.mainPage.content-card')}</div>
                 {/* <select className='choose-language' onSelect={it => changeLanguage(it.currentTarget.value)}>
                     <option value="ru">Русский</option>
                     <option value="en">English</option>
                 </select> */}
+                <div className='choose-language'>
+                    <button onClick={() => changeLanguage('ru')}>ru</button>
+                    <button onClick={() => changeLanguage('en')}>en</button>
+                </div>
                 <div className="main-page-options">
                     <div className="main-page-options__sort">
-                        Сортировать:
+                        {t('common.mainPage.sort-by')}
                         <button className={`main-page-options__sort-button ${nameSort == 0 ? 'sort-non-active' : 'sort-active'}`} onClick={() => sortByName()}>
-                            {'по названию'}
+                        {t('common.mainPage.sort-by-name')}
                             {nameSort == 2 ? <i class="fa-solid fa-arrow-down-short-wide"></i> : 
                             nameSort == 1 ? <i class="fa-solid fa-arrow-down-wide-short"></i> : ''}
                         </button>
                         <button className={`main-page-options__sort-button ${viewSort == 0 ? 'sort-non-active' : 'sort-active'}`} onClick={() => sortByViews()}>
-                            {'по просмотрам'}
+                        {t('common.mainPage.sort-by-views')}
                             {viewSort == 2 ? <i class="fa-solid fa-arrow-down-short-wide"></i> : 
                             viewSort == 1 ? <i class="fa-solid fa-arrow-down-wide-short"></i> : ''}
                         </button>
                         <button className={`main-page-options__sort-button ${startSort == 0 ? 'sort-non-active' : 'sort-active'}`} onClick={() => sortByStartDate()}>
-                            {'по дате начала'}
+                        {t('common.mainPage.sort-by-start-date')}
                             {startSort == 2 ? <i class="fa-solid fa-arrow-down-short-wide"></i> : 
                             startSort == 1 ? <i class="fa-solid fa-arrow-down-wide-short"></i> : ''}
                         </button>
                         <button className={`main-page-options__sort-button ${endSort == 0 ? 'sort-non-active' : 'sort-active'}`} onClick={() => sortByEndDate()}>
-                        {'по дате окончания'}
+                        {t('common.mainPage.sort-by-end-date')}
                             {endSort == 2 ? <i class="fa-solid fa-arrow-down-short-wide"></i> : 
                             endSort == 1 ? <i class="fa-solid fa-arrow-down-wide-short"></i> : ''}
                         </button>
@@ -167,7 +173,7 @@ const MainPage = observer(() => {
                     </div>
                     <ShowAmount/>
                     <div className="main-page-options__search">
-                        <input type="text" className="main-page-options__search__input" placeholder='Поиск...' onChange={e => mainStore.setSearch(e.target.value)}/>
+                        <input type="text" className="main-page-options__search__input" placeholder={t('common.mainPage.search')} onChange={e => mainStore.setSearch(e.target.value)}/>
                         <img src={SearchSVG} alt="" />
                     </div>
                 </div>

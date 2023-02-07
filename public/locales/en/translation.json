@@ -2,18 +2,24 @@
     "common": {
         "mainPage": {
             "content-card": "Content cards",
-            "sort-by": "Sort",
-            "sort-by-name": "by name",
-            "sort-by-views": "by views",
-            "sort-by-start-date": "by start date",
-            "sort-by-end-date": "by end date",
-            "show-amount": "Show",
+            "sort-by": "Sort by:",
+            "sort-by-name": "name",
+            "sort-by-views": "views",
+            "sort-by-start-date": "start date",
+            "sort-by-end-date": "end date",
+            "show-amount": "Show amount",
             "search": "Search...",
             "product-image": "Image",
             "product-name": "Name",
             "product-views": "Views",
             "product-start-date": "Start date",
-            "product-end-date": "End date"
+            "product-end-date": "End date",
+            "product-back": "Back",
+            "product-free": "Free",
+            "product-price": "Price",
+            "product-old-price": "Old price",
+            "product-sale-price": "Sale price",
+            "product-sale-active": "Sale is active from {{startDate}} until {{endDate}}"
         }
     }
 }
